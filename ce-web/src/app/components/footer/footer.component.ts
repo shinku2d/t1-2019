@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DataStorageService } from 'src/app/services/data/data-storage.service';
 
 @Component({
   selector: 'app-footer',
@@ -7,11 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FooterComponent implements OnInit {
   lastUpdate:Date
-  constructor() {
+  constructor(private dataStorage: DataStorageService) {
     this.lastUpdate=new Date();
    }
 
   ngOnInit() {
+    this.dataStorage.setObjectValue('dato', 'cualquier cosa');
   }
 
 }
