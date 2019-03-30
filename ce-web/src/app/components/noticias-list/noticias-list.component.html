@@ -1,0 +1,11 @@
+<carousel *ngIf="listaNoticias">
+    <slide *ngFor="let noticia of listaNoticias">
+        <img src="{{noticia.imagen}}" alt="{{noticia.titulo}}" style="display: block; width: 100%;">
+        <div class="carousel-caption d-md-block">
+            <h2>{{noticia.titulo}}</h2>
+            <!--<h3>First slide label</h3>-->
+            <p>{{noticia.descripcion}}</p>
+            <button type="button" class="btn btn-outline-light" [routerLink]="['noticias-edit', noticia.id]">Ver noticia</button>
+        </div>
+    </slide>
+</carousel>
